@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.go'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '**.go'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Go Go!
+      run: echo gogogo!
+    - name: Echo secrets
+      env:
+        SECRET_TEST1: ${{ secrets.SECRET_TEST1 }}
+        SECRET_TEST2: ${{ secrets.SECRET_TEST2 }}
+      run: |
+        echo ${SECRET_TEST1}
+        echo ${SECRET_TEST2}
