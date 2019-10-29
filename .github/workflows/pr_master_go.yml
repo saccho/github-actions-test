@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout
+      uses: actions/
     - name: Go Go!
       run: echo gogogo!
     - name: Echo secrets
