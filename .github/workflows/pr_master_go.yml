@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/
+      uses: actions/checkout@v1
     - name: Go Go!
       run: echo gogogo!
     - name: Echo secrets
