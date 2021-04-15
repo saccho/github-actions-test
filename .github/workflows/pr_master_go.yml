@@ -16,6 +16,14 @@ jobs:
        runner: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 
     steps:
+      - name: Echo secrets
+        env:
+          SECRET_TEST1: ${{ secrets.SECRET_TEST1 }}
+          SECRET_TEST2: ${{ secrets.SECRET_TEST2 }}
+        run: |
+          echo ${SECRET_TEST1}
+          echo ${SECRET_TEST2}
+        
       - name: Checkout code
         uses: actions/checkout@v2
         
